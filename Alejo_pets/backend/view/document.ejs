@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentación de API</title>
+  <link rel="stylesheet" href="../style.css" />
+
+</head>
+
+<body>
+  <h1>Documentación de API</h1>
+
+  <hr />
+  <h2>Endpoint Categorías</h2>
+  <hr />
+  <h3>Listar Categorías</h3>
+  <table>
+    <tr>
+      <th>Campo</th>
+      <th>Descripción</th>
+    </tr>
+    <tr>
+      <td>Número:</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Nombre del Servicio</td>
+      <td>Listar Categorías</td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td>/categorias</td>
+    </tr>
+    <tr>
+      <td>Descripción:</td>
+      <td>Permite listar todas las categorías</td>
+    </tr>
+    <tr>
+      <td>Verbo HTTP:</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>HEADER:</td>
+      <td>token: token</td>
+    </tr>
+    <tr>
+      <td>Usuarios:</td>
+      <td>ADMINISTRADOR</td>
+    </tr>
+    <tr>
+      <td>PETICIÓN BODY</td>
+      <td>NULL</td>
+    </tr>
+    <tr>
+      <td>RESPUESTA JSON</td>
+      <td>
+        <strong>Correcto:</strong> Status:200 json: [ { "id": 1, "nombre": "Categoría 1" }, { "id": 2, "nombre":
+        "Categoría 2" } ] <br />
+        <strong>Incorrecto:</strong> Status:404 body:{ message:'No se encontraron categorías' } <br />
+        <strong>Error:</strong> Status:500 body:{ message:"Error del servidor" + error }
+      </td>
+    </tr>
+  </table>
+
+  <hr />
+  <h2>Endpoint Géneros</h2>
+  <hr />
+  <h3>Listar Géneros</h3>
+  <table>
+    <tr>
+      <th>Campo</th>
+      <th>Descripción</th>
+    </tr>
+    <tr>
+      <td>Número:</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Nombre del Servicio</td>
+      <td>Listar Géneros</td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td>/Listarg</td>
+    </tr>
+    <tr>
+      <td>Descripción:</td>
+      <td>Permite listar todos los géneros</td>
+    </tr>
+    <tr>
+      <td>Verbo HTTP:</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>HEADER:</td>
+      <td>token: token</td>
+    </tr>
+    <tr>
+      <td>Usuarios:</td>
+      <td>ADMINISTRADOR</td>
+    </tr>
+    <tr>
+      <td>PETICIÓN BODY</td>
+      <td>NULL</td>
+    </tr>
+    <tr>
+      <td>RESPUESTA JSON</td>
+      <td>
+        <strong>Correcto:</strong> Status:200 json: [ { "id": 1, "nombre": "Género 1" }, { "id": 2, "nombre": "Género 2"
+        } ] <br />
+        <strong>Incorrecto:</strong> Status:404 body:{ message:'No se encontraron géneros' } <br />
+        <strong>Error:</strong> Status:500 body:{ message:"Error del servidor" + error }
+      </td>
+    </tr>
+  </table>
+
+  <hr />
+  <h2>Endpoint Mascotas</h2>
+  <hr />
+  <h3>Registrar Mascota</h3>
+  <table>
+    <tr>
+      <th>Campo</th>
+      <th>Descripción</th>
+    </tr>
+    <tr>
+      <td>Número:</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Nombre del Servicio</td>
+      <td>Registrar Mascota</td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td>/RegistrarM</td>
+    </tr>
+    <tr>
+      <td>Descripción:</td>
+      <td>Permite registrar una nueva mascota</td>
+    </tr>
+    <tr>
+      <td>Verbo HTTP:</td>
+      <td>POST</td>
+    </tr>
+    <tr>
+      <td>HEADER:</td>
+      <td>token: token</td>
+    </tr>
+    <tr>
+      <td>Usuarios:</td>
+      <td>ADMINISTRADOR</td>
+    </tr>
+    <tr>
+      <td>PETICIÓN BODY</td>
+      <td>
+        { "nombre": "Rex", "raza": "Labrador", "categoria": "Perro", "image": "photo-rex.jpg", "genero": "macho" }
+      </td>
+    </tr>
+    <tr>
+      <td>RESPUESTA JSON</td>
+      <td>
+        <strong>Correcto:</strong> Status:200 json: { message: "Se registró con éxito la mascota" } <br />
+        <strong>Incorrecto:</strong> Status:404 body:{ message: "Hubo un error al registrar la mascota" } <br />
+        <strong>Error:</strong> Status:500 body:{ message:"Error del servidor : " + error }
+      </td>
+    </tr>
+  </table>
+
+  <h3>Listar Mascotas</h3>
+  <table>
+    <tr>
+      <th>Campo</th>
+      <th>Descripción</th>
+    </tr>
+    <tr>
+      <td>Número:</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>Nombre del Servicio</td>
+      <td>Listar Mascotas</td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td>/ListarM</td>
+    </tr>
+    <tr>
+      <td>Descripción:</td>
+      <td>Permite listar todas las mascotas</td>
+    </tr>
+    <tr>
+      <td>Verbo HTTP:</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>HEADER:</td>
+      <td>token: token</td>
+    </tr>
+    <tr>
+      <td>Usuarios:</td>
+      <td>ADMINISTRADOR</td>
+    </tr>
+    <tr>
+      <td>PETICIÓN BODY</td>
+      <td>NULL</td>
+    </tr>
+    <tr>
+      <td>RESPUESTA JSON</td>
+      <td>
+        <strong>Correcto:</strong> Status:200 json: [ { "nombre": "Luna", "raza": "Siames", "categoria": "Gato",
+        "image": "photo-luna.jpg", "genero": "hembra" }, { "nombre": "Max", "raza": "Golden Retriever", "categoria":
+        "Perro", "image": "photo-max.jpg", "genero": "macho" } ] <br />
+        <strong>Incorrecto:</strong> Status:404 body:{ message:'No se encontraron mascotas' } <br />
+        <strong>Error:</strong> Status:500 body:{ message:"Error del servidor" + error }
+      </td>
+    </tr>
+  </table>
+
+  <h3>Eliminar Mascota</h3>
+  <table>
+    <tr>
+      <th>Campo</th>
+      <th>Descripción</th>
+    </tr>
+    <tr>
+      <td>Número:</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>Nombre del Servicio</td>
+      <td>Eliminar Mascota</td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td>/EliminarM/:id</td>
+    </tr>
+    <tr>
+      <td>Descripción:</td>
+      <td>Permite eliminar una mascota de la base de datos</td>
+    </tr>
+    <tr>
+      <td>Verbo HTTP:</td>
+      <td>DELETE</td>
+    </tr>
+    <tr>
+      <td>HEADER:</td>
+      <td>token: token</td>
+    </tr>
+    <tr>
+      <td>Usuarios:</td>
+      <td>ADMINISTRADOR</td>
+    </tr>
+    <tr>
+      <td>PETICIÓN BODY</td>
+      <td>NULL</td>
+    </tr>
+    <tr>
+      <td>RESPUESTA JSON</td>
+      <td>
+        <strong>Correcto:</strong> Status:200 json: { message: "Se eliminó con éxito la mascota" } <br />
+        <strong>Incorrecto:</strong> Status:404 body:{ message: 'No se encontró la mascota' } <br />
+        <strong>Error:</strong> Status:500 body:{ message: "Error del servidor" + error }
+      </td>
+    </tr>
+  </table>
+
+  <h3>Actualizar Mascota</h3>
+  <table>
+    <tr>
+      <th>Campo</th>
+      <th>Descripción</th>
+    </tr>
+    <tr>
+      <td>Número:</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>Nombre del Servicio</td>
+      <td>Actualizar Mascota</td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td>/ActualizarM/:id</td>
+    </tr>
+    <tr>
+      <td>Descripción:</td>
+      <td>Permite actualizar los datos de una mascota</td>
+    </tr>
+    <tr>
+      <td>Verbo HTTP:</td>
+      <td>PUT</td>
+    </tr>
+    <tr>
+      <td>HEADER:</td>
+      <td>token: token</td>
+    </tr>
+    <tr>
+      <td>Usuarios:</td>
+      <td>ADMINISTRADOR</td>
+    </tr>
+    <tr>
+      <td>PETICIÓN BODY</td>
+      <td>
+        { "nombre": "Rex", "raza": "Labrador", "categoria": "Perro", "image": "photo-rex.jpg", "genero": "macho" }
+      </td>
+    </tr>
+    <tr>
+      <td>RESPUESTA JSON</td>
+      <td>
+        <strong>Correcto:</strong> Status:200 json: { message: "Se actualizó con éxito la mascota" } <br />
+        <strong>Incorrecto:</strong> Status:404 body:{ message: "Hubo un error al actualizar la mascota" } <br />
+        <strong>Error:</strong> Status:500 body:{ message:"Error del servidor : " + error }
+      </td>
+    </tr>
+  </table>
+
+  <h3>Buscar Mascota</h3>
+  <table>
+    <tr>
+      <th>Campo</th>
+      <th>Descripción</th>
+    </tr>
+    <tr>
+      <td>Número:</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>Nombre del Servicio</td>
+      <td>Buscar Mascota</td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td>/BuscarM/:id</td>
+    </tr>
+    <tr>
+      <td>Descripción:</td>
+      <td>Permite buscar una mascota por su ID</td>
+    </tr>
+    <tr>
+      <td>Verbo HTTP:</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>HEADER:</td>
+      <td>token: token</td>
+    </tr>
+    <tr>
+      <td>Usuarios:</td>
+      <td>ADMINISTRADOR</td>
+    </tr>
+    <tr>
+      <td>PETICIÓN BODY</td>
+      <td>NULL</td>
+    </tr>
+    <tr>
+      <td>RESPUESTA JSON</td>
+      <td>
+        <strong>Correcto:</strong> Status:200 json: { "nombre": "Luna", "raza": "Siames", "categoria": "Gato", "image":
+        "photo-luna.jpg", "genero": "hembra" } <br />
+        <strong>Incorrecto:</strong> Status:404 body:{ message:'No se encontró la mascota' } <br />
+        <strong>Error:</strong> Status:500 body:{ message:"Error del servidor" + error }
+      </td>
+    </tr>
+  </table>
+
+  <hr />
+  <h2>Endpoint Razas</h2>
+  <hr />
+  <h3>Listar Razas</h3>
+  <table>
+    <tr>
+      <th>Campo</th>
+      <th>Descripción</th>
+    </tr>
+    <tr>
+      <td>Número:</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>Nombre del Servicio</td>
+      <td>Listar Razas</td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td>/razas</td>
+    </tr>
+    <tr>
+      <td>Descripción:</td>
+      <td>Permite listar todas las razas</td>
+    </tr>
+    <tr>
+      <td>Verbo HTTP:</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>HEADER:</td>
+      <td>token: token</td>
+    </tr>
+    <tr>
+      <td>Usuarios:</td>
+      <td>ADMINISTRADOR</td>
+    </tr>
+    <tr>
+      <td>PETICIÓN BODY</td>
+      <td>NULL</td>
+    </tr>
+    <tr>
+      <td>RESPUESTA JSON</td>
+      <td>
+        <strong>Correcto:</strong> Status:200 json: [ { "id": 1, "nombre": "Labrador" }, { "id": 2, "nombre": "Siames" }
+        ] <br />
+        <strong>Incorrecto:</strong> Status:404 body:{ message:'No se encontraron razas' } <br />
+        <strong>Error:</strong> Status:500 body:{ message:"Error del servidor" + error }
+      </td>
+    </tr>
+  </table>
+
+  <hr />
+  <h2>Endpoint Usuarios</h2>
+  <hr />
+  <h3>Login Usuario</h3>
+  <table>
+    <tr>
+      <th>Campo</th>
+      <th>Descripción</th>
+    </tr>
+    <tr>
+      <td>Número:</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>Nombre del Servicio</td>
+      <td>Login Usuario</td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td>/login</td>
+    </tr>
+    <tr>
+      <td>Descripción:</td>
+      <td>Permite iniciar sesión a un usuario</td>
+    </tr>
+    <tr>
+      <td>Verbo HTTP:</td>
+      <td>POST</td>
+    </tr>
+    <tr>
+      <td>HEADER:</td>
+      <td>NULL</td>
+    </tr>
+    <tr>
+      <td>Usuarios:</td>
+      <td>PUBLICO</td>
+    </tr>
+    <tr>
+      <td>PETICIÓN BODY</td>
+      <td>
+        { "email": "usuario@example.com", "password": "password123" }
+      </td>
+    </tr>
+    <tr>
+      <td>RESPUESTA JSON</td>
+      <td>
+        <strong>Correcto:</strong> Status:200 json: { "token": "abcd1234", "message": "Inicio de sesión exitoso" }
+        <br />
+        <strong>Incorrecto:</strong> Status:401 body:{ message:'Correo o contraseña incorrectos' } <br />
+        <strong>Error:</strong> Status:500 body:{ message:"Error del servidor" + error }
+      </td>
+    </tr>
+  </table>
+
+  <h3>Registrar Usuario</h3>
+  <table>
+    <tr>
+      <th>Campo</th>
+      <th>Descripción</th>
+    </tr>
+    <tr>
+      <td>Número:</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>Nombre del Servicio</td>
+      <td>Registrar Usuario</td>
+    </tr>
+    <tr>
+      <td>URL</td>
+      <td>/Registrar</td>
+    </tr>
+    <tr>
+      <td>Descripción:</td>
+      <td>Permite registrar un nuevo usuario</td>
+    </tr>
+    <tr>
+      <td>Verbo HTTP:</td>
+      <td>POST</td>
+    </tr>
+    <tr>
+      <td>HEADER:</td>
+      <td>NULL</td>
+    </tr>
+    <tr>
+      <td>Usuarios:</td>
+      <td>PUBLICO</td>
+    </tr>
+    <tr>
+      <td>PETICIÓN BODY</td>
+      <td>
+        { "nombre": "Juan Perez", "email": "AlejoG@gami.com", "password": "password123" }
+      </td>
+    </tr>
+    <tr>
+      <td>RESPUESTA JSON</td>
+      <td>
+        <strong>Correcto:</strong> Status:200 json: { "message": "Usuario registrado con éxito" } <br />
+        <strong>Incorrecto:</strong> Status:400 body:{ message:'Error al registrar usuario' } <br />
+        <strong>Error:</strong> Status:500 body:{ message:"Error del servidor" + error }
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
